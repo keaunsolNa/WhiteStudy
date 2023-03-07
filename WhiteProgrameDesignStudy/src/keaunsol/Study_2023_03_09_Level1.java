@@ -1,46 +1,56 @@
 package keaunsol;
 
-import java.awt.Color;
-import java.awt.FlowLayout;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class Study_2023_03_09_Level1 extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
+	private static JFrame fr = new JFrame("계산기");
 	
 	public static void main(String[] args) {
 		new Study_2023_03_09_Level1();
 	}
 	
-    private Study_2023_03_09_Level1() {
+    Study_2023_03_09_Level1() {
     	
-    	JButton b1 = new JButton("사칙연산 계산기");
-        JButton b2 = new JButton("윤년 계산기");
-        JButton b3 = new JButton("소수 계산기");
-        JButton b4 = new JButton("최대 공약수 계산기");
-        JButton b5 = new JButton("최소 공배수 계산기");
-        setLayout(new FlowLayout());
-        
-        add(b1);
-        add(b2);
-        add(b3);
-        add(b4);
-        add(b5);
-
-        b1.addActionListener(this);
-        b2.addActionListener(this);
-        b3.addActionListener(this);
-        b4.addActionListener(this);
-        b5.addActionListener(this);
-        
-        setSize(800,500);
-        setAlwaysOnTop(true);
-        setVisible(true);
-        getContentPane().setBackground(Color.DARK_GRAY);
+    	JPanel pn = new JPanel();
+    	JPanel pbt = new JPanel();
+    	JButton[] pBtn = new JButton[5];
+    	
+    	BorderLayout fl = new BorderLayout();
+    	pn.setLayout(fl);
+    	
+    	for(int i = 0; i < 5; i++) {
+    		
+    		
+    		pBtn[i] = (i == 0) ? new JButton("사칙연산 계산기") :
+		    		  (i == 1) ? new JButton("윤년 계산기") :
+	    			  (i == 2) ? new JButton("소수 계산기") :
+    				  (i == 3) ? new JButton("최대 공약수 계산기") :
+ 				     		     new JButton("최소 공배수 계산기");
+    		
+    		pBtn[i].addActionListener(this);
+    		pbt.add(pBtn[i]);
+    		
+    	}
+    	
+    	pn.add(pbt);
+    	
+    	fr.setContentPane(pn);
+        fr.setSize(800, 300);
+        fr.setVisible(true);
+        Dimension frameSize = fr.getSize();
+        Dimension windowSize = Toolkit.getDefaultToolkit().getScreenSize();
+        fr.setLocation((windowSize.width - frameSize.width) / 2, (windowSize.height - frameSize.height) / 2);
+        fr.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         
     }
 
@@ -51,37 +61,50 @@ public class Study_2023_03_09_Level1 extends JFrame implements ActionListener {
         
 		if(str.equals("사칙연산 계산기")) {
         
-			Study_2023_03_09_Level1_ElementaryArithmetic ea = 
+			Study_2023_03_09_Level1_ElementaryArithmetic eleArith = 
 					new Study_2023_03_09_Level1_ElementaryArithmetic();
-			dispose();
 			
-			System.out.println(ea.returnExpression());
+			eleArith.returnExpression();
+			fr.dispose();
 			
         }
 		
 		else if(str.equals("윤년 계산기")) {
 			
-            System.out.println("버튼 2 이벤트 발생");
-            setBackground(Color.BLUE);
-            
+			Study_2023_03_09_Level1_LeafYear leafYear =
+					new Study_2023_03_09_Level1_LeafYear();
+
+			leafYear.returnExpression();
+			fr.dispose();
         }
 		
 		else if(str.equals("소수 계산기")) {
 			
-            System.out.println("버튼 3 이벤트 발생");
-            setBackground(Color.pink);
-            
+			Study_2023_03_09_Level1_PrimeNumber primeNumber = 
+					new Study_2023_03_09_Level1_PrimeNumber();
+			
+			primeNumber.returnExpression();
+			fr.dispose();
         } 
 		
 		else if(str.equals("최대 공약수 계산기")) {
 			
-			System.out.println("이벤트4");
+			Study_2023_03_09_Level1_GCD GCD = 
+					new Study_2023_03_09_Level1_GCD();
+			
+			GCD.returnExpression();
+			fr.dispose();
 			
 		}
 		
 		else if(str.equals("최소 공배수 계산기")) {
 			
-			System.out.println("이벤트5");
+			Study_2023_03_09_Level1_LCM LCM = 
+					new Study_2023_03_09_Level1_LCM();
+			
+			LCM.returnExpression();
+			fr.dispose();
+			
 		}
 		 
 	}
