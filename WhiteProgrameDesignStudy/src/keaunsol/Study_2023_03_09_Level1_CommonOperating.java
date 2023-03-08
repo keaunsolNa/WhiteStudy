@@ -24,6 +24,14 @@ public class Study_2023_03_09_Level1_CommonOperating {
 		
 	}
 	
+	public void operatingExitRandom(JFrame fr) {
+		
+		answer.setText("");
+		fr.dispose();
+		Study_2023_03_09_Level2 cal = new keaunsol.Study_2023_03_09_Level2();
+		
+	}
+	
 	public void operatingErase() {
 		
 		Study_2023_03_09_Level1_NumberAndResultPanel.isOpering = false;

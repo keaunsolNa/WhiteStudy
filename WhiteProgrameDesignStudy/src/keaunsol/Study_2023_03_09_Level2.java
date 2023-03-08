@@ -23,6 +23,7 @@ public class Study_2023_03_09_Level2 extends JFrame implements ActionListener{
 	}
 	
 	Study_2023_03_09_Level2() {
+		
     	JPanel pn = new JPanel();
     	JPanel pbt = new JPanel();
     	JButton[] pBtn = new JButton[2];
@@ -51,12 +52,22 @@ public class Study_2023_03_09_Level2 extends JFrame implements ActionListener{
 		String str = e.getActionCommand(); 		
 	
 		if(str.equals("랜덤 번호 생성")) {
-	        
+			
+			Study_2023_03_09_Level2_RandomGenerator random = 
+					new Study_2023_03_09_Level2_RandomGenerator();
+			
+			random.returnExpression();
+			fr.dispose();
 			
         } 
 		
 		else if(str.equals("당첨 확인")) {
         	
+			Study_2023_03_09_Level2_FitNumber fit = 
+					new Study_2023_03_09_Level2_FitNumber();
+			
+			fit.returnExpression();
+			fr.dispose();
         }
 		
 	}
