@@ -26,6 +26,9 @@ public class Study_2023_03_09_Level1_ElementaryArithmetic extends JFrame impleme
 	private static Study_2023_03_09_Level1_CommonOperating commonOper = 
 			new Study_2023_03_09_Level1_CommonOperating();
 	
+	private static Study_2023_03_09_Level1_NumberAndResultPanel numberAndResult = 
+			new Study_2023_03_09_Level1_NumberAndResultPanel();
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
@@ -84,8 +87,6 @@ public class Study_2023_03_09_Level1_ElementaryArithmetic extends JFrame impleme
 	
 	public void returnExpression() {
 		
-		Study_2023_03_09_Level1_NumberAndResultPanel numberAndResult = new Study_2023_03_09_Level1_NumberAndResultPanel();
-		 
     	JPanel pn = new JPanel();
     	JPanel pOper = new JPanel();
     	JButton[] btnOper = new JButton[7];
@@ -112,13 +113,7 @@ public class Study_2023_03_09_Level1_ElementaryArithmetic extends JFrame impleme
     	pn.add(answer, BorderLayout.CENTER);
     	pn.add(pOper, BorderLayout.SOUTH);
 
-    	fr.setContentPane(pn);
-        fr.setSize(500, 300);
-        fr.setVisible(true);
-        Dimension frameSize = fr.getSize();
-        Dimension windowSize = Toolkit.getDefaultToolkit().getScreenSize();
-        fr.setLocation((windowSize.width - frameSize.width) / 2, (windowSize.height - frameSize.height) / 2);
-        fr.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    	commonOper.operatingFrameSetting(fr, pn);
 	}
     
 	public static int operating(String input) {

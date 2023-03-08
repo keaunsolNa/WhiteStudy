@@ -22,8 +22,11 @@ public class Study_2023_03_09_Level1_PrimeNumber extends JFrame implements Actio
 	private static StringBuilder sb = 
 			Study_2023_03_09_Level1_NumberAndResultPanel.sb;
 	
-	private static Study_2023_03_09_Level1_CommonOperating commonOper = 
+	private static final Study_2023_03_09_Level1_CommonOperating commonOper = 
 			new Study_2023_03_09_Level1_CommonOperating();
+
+	private static final Study_2023_03_09_Level1_NumberAndResultPanel numberAndResult = 
+			new Study_2023_03_09_Level1_NumberAndResultPanel();
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -55,7 +58,7 @@ public class Study_2023_03_09_Level1_PrimeNumber extends JFrame implements Actio
 	
 	public void returnExpression() {
 		
-		Study_2023_03_09_Level1_NumberAndResultPanel numberAndResult = new Study_2023_03_09_Level1_NumberAndResultPanel();
+		
     	
 		JPanel pn = new JPanel();
     	JPanel pOper = new JPanel();
@@ -79,13 +82,8 @@ public class Study_2023_03_09_Level1_PrimeNumber extends JFrame implements Actio
     	pn.add(answer, BorderLayout.CENTER);
     	pn.add(pOper, BorderLayout.SOUTH);
 
-    	fr.setContentPane(pn);
-        fr.setSize(500, 300);
-        fr.setVisible(true);
-        Dimension frameSize = fr.getSize();
-        Dimension windowSize = Toolkit.getDefaultToolkit().getScreenSize();
-        fr.setLocation((windowSize.width - frameSize.width) / 2, (windowSize.height - frameSize.height) / 2);
-        fr.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    	commonOper.operatingFrameSetting(fr, pn);
+
 	}
 	
 	public static boolean operating() {

@@ -25,6 +25,9 @@ public class Study_2023_03_09_Level1_LCM extends JFrame implements ActionListene
 	private static Study_2023_03_09_Level1_CommonOperating commonOper = 
 			new Study_2023_03_09_Level1_CommonOperating();
 	
+	private static Study_2023_03_09_Level1_NumberAndResultPanel numberAndResult = 
+			new Study_2023_03_09_Level1_NumberAndResultPanel();
+	
 	private static Integer prevNumber;
 	private static Integer nextNumber;
 	
@@ -70,18 +73,7 @@ public class Study_2023_03_09_Level1_LCM extends JFrame implements ActionListene
 		
 		else if(e.getActionCommand().equals("AND")) {
 			
-			if(sb.length() == 0) {
-				answer.setText("");
-				answer.append("잘못된 입력입니다.");
-				Study_2023_03_09_Level1_NumberAndResultPanel.isOpering = true;
-			}
-			
-			else {
-				
-				answer.append(" AND ");
-				prevNumber = Integer.parseInt(sb.toString());
-				sb.setLength(0);
-			}
+			prevNumber = commonOper.operatingAnd(prevNumber);
 			
 		}
 		
@@ -89,8 +81,6 @@ public class Study_2023_03_09_Level1_LCM extends JFrame implements ActionListene
 	
 	public void returnExpression() {
 		
-		Study_2023_03_09_Level1_NumberAndResultPanel numberAndResult = new Study_2023_03_09_Level1_NumberAndResultPanel();
-    	
 		JPanel pn = new JPanel();
     	JPanel pOper = new JPanel();
     	JButton[] btnOper = new JButton[4];
@@ -114,13 +104,7 @@ public class Study_2023_03_09_Level1_LCM extends JFrame implements ActionListene
     	pn.add(answer, BorderLayout.CENTER);
     	pn.add(pOper, BorderLayout.SOUTH);
 
-    	fr.setContentPane(pn);
-        fr.setSize(500, 300);
-        fr.setVisible(true);
-        Dimension frameSize = fr.getSize();
-        Dimension windowSize = Toolkit.getDefaultToolkit().getScreenSize();
-        fr.setLocation((windowSize.width - frameSize.width) / 2, (windowSize.height - frameSize.height) / 2);
-        fr.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    	commonOper.operatingFrameSetting(fr, pn);
 	}
 	
 	private static long operating(long num1, long num2) {

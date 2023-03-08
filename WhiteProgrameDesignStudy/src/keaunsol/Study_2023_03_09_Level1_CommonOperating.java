@@ -1,6 +1,10 @@
 package keaunsol;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 public class Study_2023_03_09_Level1_CommonOperating {
@@ -27,8 +31,9 @@ public class Study_2023_03_09_Level1_CommonOperating {
 		
 	}
 	
-	public void operatingAnd(Integer prevNumber) {
+	public int operatingAnd(Integer prevNumber) {
 		
+		System.out.println(sb);
 		if(sb.length() == 0) {
 			
 			answer.setText("");
@@ -44,5 +49,19 @@ public class Study_2023_03_09_Level1_CommonOperating {
 			sb.setLength(0);
 		}
 		
+		return prevNumber;
+		
+	}
+
+	public void operatingFrameSetting(JFrame fr, JPanel pn) {
+		
+    	fr.setContentPane(pn);
+		fr.setSize(500, 300);
+        fr.setVisible(true);
+        Dimension frameSize = fr.getSize();
+        Dimension windowSize = Toolkit.getDefaultToolkit().getScreenSize();
+        fr.setLocation((windowSize.width - frameSize.width) / 2, (windowSize.height - frameSize.height) / 2);
+        fr.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        
 	}
 }

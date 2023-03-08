@@ -15,6 +15,10 @@ public class Study_2023_03_09_Level1 extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	private static JFrame fr = new JFrame("계산기");
 	
+	
+	private static Study_2023_03_09_Level1_CommonOperating commonOper = 
+			new Study_2023_03_09_Level1_CommonOperating();
+	
 	public static void main(String[] args) {
 		new Study_2023_03_09_Level1();
 	}
@@ -30,7 +34,6 @@ public class Study_2023_03_09_Level1 extends JFrame implements ActionListener {
     	
     	for(int i = 0; i < 5; i++) {
     		
-    		
     		pBtn[i] = (i == 0) ? new JButton("사칙연산 계산기") :
 		    		  (i == 1) ? new JButton("윤년 계산기") :
 	    			  (i == 2) ? new JButton("소수 계산기") :
@@ -44,13 +47,8 @@ public class Study_2023_03_09_Level1 extends JFrame implements ActionListener {
     	
     	pn.add(pbt);
     	
-    	fr.setContentPane(pn);
+    	commonOper.operatingFrameSetting(fr, pn);
         fr.setSize(800, 300);
-        fr.setVisible(true);
-        Dimension frameSize = fr.getSize();
-        Dimension windowSize = Toolkit.getDefaultToolkit().getScreenSize();
-        fr.setLocation((windowSize.width - frameSize.width) / 2, (windowSize.height - frameSize.height) / 2);
-        fr.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         
     }
 

@@ -22,7 +22,12 @@ public class Study_2023_03_09_Level1_LeafYear extends JFrame implements ActionLi
 	private static StringBuilder sb = 
 			Study_2023_03_09_Level1_NumberAndResultPanel.sb;
 	
+	private static Study_2023_03_09_Level1_CommonOperating commonOper = 
+			new Study_2023_03_09_Level1_CommonOperating();
 
+	private static Study_2023_03_09_Level1_NumberAndResultPanel numberAndResult = 
+			new Study_2023_03_09_Level1_NumberAndResultPanel();
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
@@ -39,17 +44,13 @@ public class Study_2023_03_09_Level1_LeafYear extends JFrame implements ActionLi
 		
 		else if(e.getActionCommand().equals("종료")) {
 			
-			Study_2023_03_09_Level1_NumberAndResultPanel.isOpering = false;
-			answer.setText("");
-			fr.dispose();
-			Study_2023_03_09_Level1 cal = new keaunsol.Study_2023_03_09_Level1();
+			commonOper.operatingExit(fr);
 			
 		} 
 		
 		else if(e.getActionCommand().equals("지우기")) {
 			
-			Study_2023_03_09_Level1_NumberAndResultPanel.isOpering = false;
-			answer.setText("");
+			commonOper.operatingErase();
 			
 		}
 		
@@ -57,8 +58,6 @@ public class Study_2023_03_09_Level1_LeafYear extends JFrame implements ActionLi
 	
 	public void returnExpression() {
 		
-		Study_2023_03_09_Level1_NumberAndResultPanel numberAndResult = new Study_2023_03_09_Level1_NumberAndResultPanel();
-    	
 		JPanel pn = new JPanel();
     	JPanel pOper = new JPanel();
     	JButton[] btnOper = new JButton[3];
@@ -81,13 +80,7 @@ public class Study_2023_03_09_Level1_LeafYear extends JFrame implements ActionLi
     	pn.add(answer, BorderLayout.CENTER);
     	pn.add(pOper, BorderLayout.SOUTH);
 
-    	fr.setContentPane(pn);
-        fr.setSize(500, 300);
-        fr.setVisible(true);
-        Dimension frameSize = fr.getSize();
-        Dimension windowSize = Toolkit.getDefaultToolkit().getScreenSize();
-        fr.setLocation((windowSize.width - frameSize.width) / 2, (windowSize.height - frameSize.height) / 2);
-        fr.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    	commonOper.operatingFrameSetting(fr, pn);
 	}
 	
 	private static boolean operating() {
