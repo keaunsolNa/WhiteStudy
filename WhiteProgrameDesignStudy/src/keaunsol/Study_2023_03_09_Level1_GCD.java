@@ -22,6 +22,9 @@ public class Study_2023_03_09_Level1_GCD extends JFrame implements ActionListene
 	private static StringBuilder sb = 
 			Study_2023_03_09_Level1_NumberAndResultPanel.sb;
 	
+	private static Study_2023_03_09_Level1_CommonOperating commonOper = 
+			new Study_2023_03_09_Level1_CommonOperating();
+	
 	private static Integer prevNumber;
 	private static Integer nextNumber;
 	
@@ -55,33 +58,30 @@ public class Study_2023_03_09_Level1_GCD extends JFrame implements ActionListene
 		
 		else if(e.getActionCommand().equals("종료")) {
 			
-			Study_2023_03_09_Level1_NumberAndResultPanel.isOpering = false;
-			answer.setText("");
-			fr.dispose();
-			Study_2023_03_09_Level1 cal = new keaunsol.Study_2023_03_09_Level1();
+			commonOper.operatingExit(fr);
 			
 		} 
 		
 		else if(e.getActionCommand().equals("지우기")) {
 			
-			Study_2023_03_09_Level1_NumberAndResultPanel.isOpering = false;
-			answer.setText("");
+			commonOper.operatingErase();
 			
 		}
 		
 		else if(e.getActionCommand().equals("AND")) {
 			
+			commonOper.operatingAnd(prevNumber);
 			if(sb.length() == 0) {
-				answer.setText("");
-				answer.append("잘못된 입력입니다.");
-				Study_2023_03_09_Level1_NumberAndResultPanel.isOpering = true;
+//				answer.setText("");
+//				answer.append("잘못된 입력입니다.");
+//				Study_2023_03_09_Level1_NumberAndResultPanel.isOpering = true;
 			}
 			
 			else {
 				
-				answer.append(" AND ");
-				prevNumber = Integer.parseInt(sb.toString());
-				sb.setLength(0);
+//				answer.append(" AND ");
+//				prevNumber = Integer.parseInt(sb.toString());
+//				sb.setLength(0);
 			}
 			
 		}

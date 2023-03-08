@@ -22,6 +22,9 @@ public class Study_2023_03_09_Level1_LCM extends JFrame implements ActionListene
 	private static StringBuilder sb = 
 			Study_2023_03_09_Level1_NumberAndResultPanel.sb;
 	
+	private static Study_2023_03_09_Level1_CommonOperating commonOper = 
+			new Study_2023_03_09_Level1_CommonOperating();
+	
 	private static Integer prevNumber;
 	private static Integer nextNumber;
 	
@@ -55,17 +58,13 @@ public class Study_2023_03_09_Level1_LCM extends JFrame implements ActionListene
 		
 		else if(e.getActionCommand().equals("종료")) {
 			
-			Study_2023_03_09_Level1_NumberAndResultPanel.isOpering = false;
-			answer.setText("");
-			fr.dispose();
-			Study_2023_03_09_Level1 cal = new keaunsol.Study_2023_03_09_Level1();
+			commonOper.operatingExit(fr);
 			
 		} 
 		
 		else if(e.getActionCommand().equals("지우기")) {
 			
-			Study_2023_03_09_Level1_NumberAndResultPanel.isOpering = false;
-			answer.setText("");
+			commonOper.operatingErase();
 			
 		}
 		

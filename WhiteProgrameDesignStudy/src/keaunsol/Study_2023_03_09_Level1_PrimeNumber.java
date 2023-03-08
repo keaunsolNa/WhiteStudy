@@ -22,6 +22,8 @@ public class Study_2023_03_09_Level1_PrimeNumber extends JFrame implements Actio
 	private static StringBuilder sb = 
 			Study_2023_03_09_Level1_NumberAndResultPanel.sb;
 	
+	private static Study_2023_03_09_Level1_CommonOperating commonOper = 
+			new Study_2023_03_09_Level1_CommonOperating();
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -39,18 +41,14 @@ public class Study_2023_03_09_Level1_PrimeNumber extends JFrame implements Actio
 		
 		else if(e.getActionCommand().equals("종료")) {
 			
-			Study_2023_03_09_Level1_NumberAndResultPanel.isOpering = false;
-			answer.setText("");
-			fr.dispose();
-			Study_2023_03_09_Level1 cal = new keaunsol.Study_2023_03_09_Level1();
+			commonOper.operatingExit(fr);
 			
 		} 
 		
 		else if(e.getActionCommand().equals("지우기")) {
 			
-			Study_2023_03_09_Level1_NumberAndResultPanel.isOpering = false;
-			answer.setText("");
-			
+			commonOper.operatingErase();
+	
 		}
 		
 	}

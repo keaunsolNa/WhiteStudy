@@ -23,6 +23,9 @@ public class Study_2023_03_09_Level1_ElementaryArithmetic extends JFrame impleme
 	private static StringBuilder sb = 
 			Study_2023_03_09_Level1_NumberAndResultPanel.sb;
 	
+	private static Study_2023_03_09_Level1_CommonOperating commonOper = 
+			new Study_2023_03_09_Level1_CommonOperating();
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
@@ -31,7 +34,7 @@ public class Study_2023_03_09_Level1_ElementaryArithmetic extends JFrame impleme
 			if(answer.getText().length() == 0) return;
 			
 			answer.setText("");
-			answer.append("답은 : " + operating(sb.toString()) + " 입니다.");
+			answer.append("답은 " + operating(sb.toString()) + " 입니다.");
 			sb.setLength(0);
 			Study_2023_03_09_Level1_NumberAndResultPanel.isOpering = true;
 			
@@ -39,29 +42,42 @@ public class Study_2023_03_09_Level1_ElementaryArithmetic extends JFrame impleme
 		
 		else if(e.getActionCommand().equals("종료")) {
 			
-			Study_2023_03_09_Level1_NumberAndResultPanel.isOpering = false;
-			answer.setText("");
-			fr.dispose();
-			Study_2023_03_09_Level1 cal = new keaunsol.Study_2023_03_09_Level1();
+			commonOper.operatingExit(fr);
+
 			
 		} 
 		
 		else if(e.getActionCommand().equals("지우기")) {
 			
-			Study_2023_03_09_Level1_NumberAndResultPanel.isOpering = false;
-			answer.setText("");
+			commonOper.operatingErase();
 			
 		}
 		
 		else {
 			
 			if(Study_2023_03_09_Level1_NumberAndResultPanel.isOpering) {
+				
 				answer.setText("");
 				Study_2023_03_09_Level1_NumberAndResultPanel.isOpering = false;
+				
 			}
 			
-			answer.append(e.getActionCommand());
-			sb.append(e.getActionCommand());
+			char temp = sb.charAt(sb.length() - 1);
+			
+			if(temp == '+' || temp == '-' || temp == '*' || temp == '/') {
+				
+				answer.setText("올바르지 않은 연산입니다. 재 실행 부탁드립니다. ");
+				Study_2023_03_09_Level1_NumberAndResultPanel.isOpering = true;
+				sb.setLength(0);
+				
+			}
+			
+			else {
+				
+				answer.append(" " + e.getActionCommand() +" ");
+				sb.append(e.getActionCommand());
+				
+			}
 			
 		}
 	}
