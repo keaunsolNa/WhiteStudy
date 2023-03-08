@@ -37,7 +37,13 @@ public class Study_2023_03_09_Level1_ElementaryArithmetic extends JFrame impleme
 			if(answer.getText().length() == 0) return;
 			
 			answer.setText("");
-			answer.append("답은 " + operating(sb.toString()) + " 입니다.");
+			
+			int ans = operating(sb.toString());
+			
+			if(answer.getText().equals("0")) answer.setText("0으로 나눌 수 없습니다. ");
+				
+			else answer.append("답은 " + ans + " 입니다.");
+			
 			sb.setLength(0);
 			Study_2023_03_09_Level1_NumberAndResultPanel.isOpering = true;
 			
@@ -136,7 +142,16 @@ public class Study_2023_03_09_Level1_ElementaryArithmetic extends JFrame impleme
 				else { 
 					
 					idx = input.indexOf('/'); 
-					if (idx != -1) return operating(input.substring(0, idx)) / operating(input.substring(idx + 1));
+					
+					try {
+						
+						if (idx != -1) return operating(input.substring(0, idx)) / operating(input.substring(idx + 1));
+						
+					} catch( java.lang.ArithmeticException e) {
+						
+						answer.append("0");
+						return 0;
+					}
 					
 				} 
 			} 

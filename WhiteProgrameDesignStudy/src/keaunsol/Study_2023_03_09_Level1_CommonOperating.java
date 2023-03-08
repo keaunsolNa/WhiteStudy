@@ -39,6 +39,14 @@ public class Study_2023_03_09_Level1_CommonOperating {
 		
 	}
 	
+	public void operatingExitEncryption(JFrame fr) {
+
+		answer.setText("");
+		fr.dispose();
+		Study_2023_03_09_Level3 cal = new keaunsol.Study_2023_03_09_Level3();
+		
+	}
+	
 	public int operatingAnd(Integer prevNumber) {
 		
 		System.out.println(sb);
@@ -72,4 +80,5 @@ public class Study_2023_03_09_Level1_CommonOperating {
         fr.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         
 	}
+
 }
