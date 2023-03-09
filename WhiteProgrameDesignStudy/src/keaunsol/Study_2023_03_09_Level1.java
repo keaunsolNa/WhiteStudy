@@ -18,7 +18,6 @@ public class Study_2023_03_09_Level1 extends JFrame implements ActionListener {
 	
 	private static Study_2023_03_09_Level1_CommonOperating commonOper = 
 			new Study_2023_03_09_Level1_CommonOperating();
-	
 	public static void main(String[] args) {
 		new Study_2023_03_09_Level1();
 	}

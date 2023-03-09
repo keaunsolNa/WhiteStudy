@@ -175,10 +175,12 @@ public class Study_2023_03_09_Level2_FitNumber  extends JFrame implements Action
 	    conn.setDoOutput(true);
 	    
 	    BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+	    
 	    String retrunMsg[] = in.readLine().replaceAll("\"|}", "").split(",");
 	
+	    
 	    for(String string : retrunMsg) {
-
+	    	
 	    	String key = string.split(":")[0];
 	    	String value = string.split(":")[1];
 	    	

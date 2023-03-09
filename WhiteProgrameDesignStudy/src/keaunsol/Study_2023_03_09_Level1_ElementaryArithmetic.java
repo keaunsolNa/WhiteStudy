@@ -32,6 +32,7 @@ public class Study_2023_03_09_Level1_ElementaryArithmetic extends JFrame impleme
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
+		
 		if(e.getActionCommand().equals("연산")) {
 			
 			if(answer.getText().length() == 0) return;

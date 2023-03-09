@@ -3,8 +3,6 @@ package pky;
 import java.io.IOException;
 import java.util.Scanner;
 
-import com.sun.org.apache.xpath.internal.operations.Equals;
-
 public class Study_2023_03_09_Level1_leapYear {
 
 	public static void main(String[] args) throws IOException  {

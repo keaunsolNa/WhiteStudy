@@ -32,7 +32,7 @@ public class Study_2023_03_09_Level3_AES_256 extends JFrame implements ActionLis
 	private static String key;
 	private static final String IV = "ShVmYq3t6w9y$B&E";
 	private static final String TRANSFORMATION = "AES/CBC/PKCS5Padding";
-	
+	//	01234567890123456789012345678901
 	
 	private static JTextArea answer = 
 			Study_2023_03_09_Level1_NumberAndResultPanel.answer;

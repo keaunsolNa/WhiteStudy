@@ -32,8 +32,7 @@ public class Study_2023_03_09_Level3 extends JFrame implements ActionListener {
     	for(int i = 0; i < 3; i++) {
     		
     		pBtn[i] = (i == 0) ? new JButton("SHA-256") :
-    				  (i == 1) ? new JButton("AES-256") :
- 				     		     new JButton("3");
+ 				     		     new JButton("DES");
     		
     		pBtn[i].addActionListener(this);
     		pbt.add(pBtn[i]);
@@ -68,6 +67,7 @@ public class Study_2023_03_09_Level3 extends JFrame implements ActionListener {
 			aes_256.returnExpression();
 			fr.dispose();
         }
+		
 	}
 
 }
