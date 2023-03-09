@@ -32,6 +32,5 @@ public class Study_2023_03_09_Level1_Calculator_BufferStream {
 		//4.나누기
 		System.out.println("나누기 :" + (num1 / num2) );
 
-     
 	}
 }
