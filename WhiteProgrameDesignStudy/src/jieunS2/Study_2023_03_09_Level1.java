@@ -53,6 +53,12 @@ public class Study_2023_03_09_Level1 {
 			
 		System.out.print("+, -, /, * 중 연산자를 입력해주세요: ");
 		String choice = sc.next();
+				
+		
+		/*
+		 * next()메소드는 공백(space)전까지 이벽받은 문자열을 반환하는 것
+		 * nextLine()메소드는 Enter를 치기 전까지 쓴 문자열 모두 반환하는 것
+		 */
 		
 		if(choice.equals("+, -, / *")) {
 			System.out.println("연산자를 입력하지 않았습니다.");

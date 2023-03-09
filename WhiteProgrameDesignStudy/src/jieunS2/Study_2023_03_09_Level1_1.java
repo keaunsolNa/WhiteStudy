@@ -8,6 +8,7 @@ public class Study_2023_03_09_Level1_1 {
 		Scanner sc = new Scanner(System.in);
 		
 		/* if ~ else 문으로 사칙연산한 문제를 switch문으로 변경  */
+		/* 다만 똑같은 문제에서 해결 못함. */
 		
 		System.out.println("==두 수와 연산자 하나를 입력 받아 사칙연산을 해보자2==");
 		
