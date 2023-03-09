@@ -16,6 +16,7 @@ public class Study_2023_03_09_Level1_NumberAndResultPanel extends JFrame impleme
 	static StringBuilder sb = new StringBuilder();
 	static boolean isOpering;
 	
+	// 숫자칸과 결과창 JPanel 생성 후 반환하는 Method
 	public JPanel NumberAndResultPanel() {
 		
     	JPanel pNumber = new JPanel();

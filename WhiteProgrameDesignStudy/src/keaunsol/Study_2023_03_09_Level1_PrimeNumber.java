@@ -1,8 +1,6 @@
 package keaunsol;
 
 import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -86,6 +84,7 @@ public class Study_2023_03_09_Level1_PrimeNumber extends JFrame implements Actio
 
 	}
 	
+	// 소수 판별 Method
 	public static boolean operating() {
 	
 		long number = Long.parseLong(sb.toString());

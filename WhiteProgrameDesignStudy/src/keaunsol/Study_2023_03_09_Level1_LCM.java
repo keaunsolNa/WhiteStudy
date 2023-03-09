@@ -1,8 +1,6 @@
 package keaunsol;
 
 import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -107,6 +105,7 @@ public class Study_2023_03_09_Level1_LCM extends JFrame implements ActionListene
     	commonOper.operatingFrameSetting(fr, pn);
 	}
 	
+	// 최대공약수를 이용한 최소공배수 유클리드 호제법 알고리즘
 	private static long operating(long num1, long num2) {
 
 		long gcd = Study_2023_03_09_Level1_GCD.operating(num1, num2);

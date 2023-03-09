@@ -1,8 +1,6 @@
 package keaunsol;
 
 import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -107,10 +105,12 @@ public class Study_2023_03_09_Level1_GCD extends JFrame implements ActionListene
     	commonOper.operatingFrameSetting(fr, pn);
 	}
 	
+	// 최대공약수 유클리드 호제법 알고리즘 Method
 	public static long operating(long num1, long num2) {
 	
 		if(num2 == 0) return num1;
 		
+		// 재귀 호출
 		else return operating(num2, num1 % num2);
 		
 	}

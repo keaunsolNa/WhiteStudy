@@ -12,6 +12,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+/*
+ * SHA-256 알고리즘은 표준 해시 알고리즘인 SHA-2 계열 중 하나로 단방향 알고리즘이다. 
+ * 복호화는 불가능하다.
+ */
 public class Study_2023_03_09_Level3_SHA_256 extends JFrame implements ActionListener {
 	
 	private static final long serialVersionUID = 1L;
@@ -63,15 +67,20 @@ public class Study_2023_03_09_Level3_SHA_256 extends JFrame implements ActionLis
 			
 			try {
 				
+				// MessageDigest class의 레퍼런스 변수 생성
 				MessageDigest md = MessageDigest.getInstance("SHA-256");
+				
+				// 레퍼런스 변수의 update method를 통해 간단하게 암호화가 가능하다.
 				md.update(plainText.toString().getBytes());
+				
+				// 결과값은 256비트의 byte 배열로 반환받는다.
 				byte[] data = md.digest();
 				
 				for (byte b : data) {
 					
 					answer.append(String.format("%02x", b));
-					
 					answer.setForeground(Color.WHITE);
+					
 				}
 				
 			} catch (NoSuchAlgorithmException e1) {

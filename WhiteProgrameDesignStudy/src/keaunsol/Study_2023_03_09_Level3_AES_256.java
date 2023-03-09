@@ -23,16 +23,26 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+/*
+ * AES-256 알고리즘은 암호화 / 복호화에 동일한 고정키를 사용하는 대칭 키 알고리즘이다.
+ * SPN(Substitution - Permutation Network) 구조를 이용한다.
+ */
 public class Study_2023_03_09_Level3_AES_256 extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	private static JFrame fr = new JFrame("AES_256 암호화/복호화 알고리즘");
+	
+	// 유저 입력값(평문, 암호문) 
 	private static JTextArea plainText = new JTextArea();
 	
+	// 암호화에 필요한 Key static 변수
 	private static String key;
+	
+	// 초기화용 벡터를 지정한다.
 	private static final String IV = "ShVmYq3t6w9y$B&E";
+	
+	// 변환 알고리즘 
 	private static final String TRANSFORMATION = "AES/CBC/PKCS5Padding";
-	//	01234567890123456789012345678901
 	
 	private static JTextArea answer = 
 			Study_2023_03_09_Level1_NumberAndResultPanel.answer;
@@ -80,21 +90,32 @@ public class Study_2023_03_09_Level3_AES_256 extends JFrame implements ActionLis
 		if(e.getActionCommand().equals("암호화")) {
 			
 			if(answer.getText().toString().length() != 0) answer.setText("");
+			
+			// JOptionPane 클래스의 showInputDialog method로 받은 입력값을 암호화의 공개키로 할당한다.
 			key = JOptionPane.showInputDialog("암호화에 사용할 32byte 키를 입력해주십시오.");
 			
 			try {
-				
+
+				// Cipher 암호화 알고리즘 레퍼런스 변수 생성
 				Cipher cipher = Cipher.getInstance(TRANSFORMATION);
+				
+				// 암호화 알고리즘은 AES로 지정한다.
 				SecretKeySpec secretKeySpec = new SecretKeySpec(key.getBytes(), "AES");
+				
+				// static 변수로 선언 및 초기화 한 IV 변수의 값으로 IvParameterSpec 클래스의 초기화 벡터를 지정한다.
 				IvParameterSpec ivParameterSpec = new IvParameterSpec(IV.getBytes(StandardCharsets.UTF_8));
+				
+				// Cipher 객체의 init method로 암호화 타입, 암호화 키, 초기화 벡터를 매개변수로 cipher 암호키 레퍼런스 객체를 초기화한다.
 				cipher.init(Cipher.ENCRYPT_MODE, secretKeySpec, ivParameterSpec);
 				
-		        
+		        // 정답란에 암호화 된 입력값을 할당
 		        answer.append(Base64.getEncoder()
 		        					.encodeToString(cipher.doFinal(plainText.getText().toString().getBytes(StandardCharsets.UTF_8))));
 		        
+		        // 정답란 텍스트 색상 변경
 		        answer.setForeground(Color.WHITE);
 		        
+		        // 예외 처리.
 			} catch (	NoSuchAlgorithmException 
 						| NoSuchPaddingException 
 						| InvalidKeyException 
@@ -109,18 +130,23 @@ public class Study_2023_03_09_Level3_AES_256 extends JFrame implements ActionLis
 			plainText.setText("");
 		}
 		
+		
+		// AES 복호화 알고리즘
 		else if(e.getActionCommand().equals("복호화")) {
 
 			if(answer.getText().toString().length() != 0) answer.setText("");
 
+			// 복호화에 사용할 Key 값 할당
 			key = JOptionPane.showInputDialog("복호화 사용할 32byte 키를 입력해주십시오.");
 			
 			try {
 				
+				// AES-256은 암호화 - 복호화가 역순이다. 
 				Cipher cipher = Cipher.getInstance(TRANSFORMATION);
 				SecretKeySpec secretKeySpec = new SecretKeySpec(key.getBytes(), "AES");
 				IvParameterSpec ivParameterSpec = new IvParameterSpec(IV.getBytes(StandardCharsets.UTF_8));
-				
+
+				// Decrypt 시행
 				cipher.init(Cipher.DECRYPT_MODE, secretKeySpec, ivParameterSpec);
 				
 				answer.append(new String(cipher.doFinal(Base64.getDecoder().decode(plainText.getText().toString())), "UTF-8"));

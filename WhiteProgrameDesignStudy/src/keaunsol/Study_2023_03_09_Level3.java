@@ -24,15 +24,15 @@ public class Study_2023_03_09_Level3 extends JFrame implements ActionListener {
 		
     	JPanel pn = new JPanel();
     	JPanel pbt = new JPanel();
-    	JButton[] pBtn = new JButton[3];
+    	JButton[] pBtn = new JButton[2];
     	
     	BorderLayout fl = new BorderLayout();
     	pn.setLayout(fl);
     	
-    	for(int i = 0; i < 3; i++) {
+    	for(int i = 0; i < 2; i++) {
     		
     		pBtn[i] = (i == 0) ? new JButton("SHA-256") :
- 				     		     new JButton("DES");
+ 				     		     new JButton("AES-256");
     		
     		pBtn[i].addActionListener(this);
     		pbt.add(pBtn[i]);
