@@ -22,20 +22,26 @@ public class Study_2023_03_09_Level1_Calculator_case {
 		System.out.println("두번째 수를 입력하세요.");
 		double num2 = sc.nextInt();
      
-		switch (str) {
-		case "+": 
-			System.out.println((num1 + num2));
-			break;
-		case "-": 
-			System.out.println((num1 - num2));
-			break;
-		case "*": 
-			System.out.println((num1 * num2));
-			break;
-		case "/": 
-			System.out.println((num1 / num2));
-			break;
-		
+		try {
+			
+			switch (str) {
+			case "+": 
+				System.out.println((int)(num1 + num2));
+				break;
+			case "-": 
+				System.out.println((int)(num1 - num2));
+				break;
+			case "*": 
+				System.out.println((int)(num1 * num2));
+				break;
+			case "/": 
+				System.out.println((num1 / num2));
+				break;
+			
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 }
