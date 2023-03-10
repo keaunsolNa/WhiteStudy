@@ -23,23 +23,29 @@ public class Study_2023_03_10_Level4  {
 	private static Random random = new Random();
 	
 	public static void main(String[] args) throws IOException {
-
-		map = new StringBuilder();
-		
-		// 최초의 스도쿠 맵
-		map.append("\t   <★★★ 틱택토 게임 ★★★> \n\n");
-		upperLine.append("\t\t_|_|_\n");
-		middleLine.append("\t\t_|_|_\n");
-		downLine.append("\t\t | | \n\n");
-		
-		// 위, 중간, 아래 줄을 하나의 맵으로 합친다.
-		map.append(upperLine).append(middleLine).append(downLine);
-		
-		// 초기화
-		for(int i = 0; i < 9; i++) winningMap[i] = 0;
 		
 		// 무한 반복
 		while(true) {
+			
+			// 시작 전 초기화
+			map = new StringBuilder();
+			upperLine.setLength(0);;
+			middleLine.setLength(0);;
+			downLine.setLength(0);;
+			pressMap = new boolean[9];
+			winningMap = new int[9];
+			
+			// 최초의 스도쿠 맵
+			map.append("\t   <★★★ 틱택토 게임 ★★★> \n\n");
+			upperLine.append("\t\t_|_|_\n");
+			middleLine.append("\t\t_|_|_\n");
+			downLine.append("\t\t | | \n\n");
+			
+			// 초기화
+			for(int i = 0; i < 9; i++) winningMap[i] = 0;
+			
+			// 위, 중간, 아래 줄을 하나의 맵으로 합친다.
+			map.append(upperLine).append(middleLine).append(downLine);
 			
 			System.out.println("스도쿠 게임입니다.");
 			System.out.println("원하시는 모드를 선택하세요");
@@ -62,7 +68,16 @@ public class Study_2023_03_10_Level4  {
 				
 				System.out.println("안녕히 가세요~");
 				System.exit(0);
+				
+			} else {
+				
+				System.out.println("잘못된 입력입니다.");
+				System.out.println();
+				continue;
 			}
+			 
+			System.out.println("LOOP END 이후");
+			System.out.println(map);
 		}
 		
 	}
@@ -107,6 +122,7 @@ public class Study_2023_03_10_Level4  {
 				System.out.println(map);
 				System.out.println("PLAYER " + winChk + " 승리! 축하합니다.");
 				System.out.println();
+
 				return;
 			}
 			
@@ -254,6 +270,7 @@ public class Study_2023_03_10_Level4  {
 					System.out.println("PLAYER " + winChk + " 승리! 축하합니다.");
 					System.out.println();
 				}
+				
 				return;
 				
 			}
