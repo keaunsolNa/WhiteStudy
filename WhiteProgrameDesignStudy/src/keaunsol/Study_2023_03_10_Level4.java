@@ -215,8 +215,8 @@ public class Study_2023_03_10_Level4  {
 		while(true) {
 			
 			boolean exit = true;
-			for(int i = 0; i < pressMap.length; i++ ) if(pressMap[i] = false) exit = false;
-				
+			for(int i = 0; i < pressMap.length; i++ ) if(pressMap[i] == false && winningMap[i] == 0) exit = false;
+			
 			if(exit) {
 				System.out.println("무승부!");
 				return;
@@ -241,9 +241,19 @@ public class Study_2023_03_10_Level4  {
 			
 			if(winChk != 0) {
 				
-				System.out.println(map);
-				System.out.println("PLAYER " + winChk + " 승리! 축하합니다.");
-				System.out.println();
+				if(winChk == 2) {
+					
+					System.out.println(map);
+					System.out.println("COMPUYER 승리!");
+					System.out.println();
+				} 
+				
+				else {
+					
+					System.out.println(map);
+					System.out.println("PLAYER " + winChk + " 승리! 축하합니다.");
+					System.out.println();
+				}
 				return;
 				
 			}
