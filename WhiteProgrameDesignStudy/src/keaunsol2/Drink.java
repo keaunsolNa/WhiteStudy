@@ -11,7 +11,7 @@ public interface Drink extends Menu{
 	public static final String personalCup = "personalCup";
 	public static final String disposableCup = "disposableCup";
 	
-	public abstract Integer getSize(int choise);
+	public abstract void getSize();
 	public abstract String getCupType(int choise);
 	public abstract String[] personalOption();
 

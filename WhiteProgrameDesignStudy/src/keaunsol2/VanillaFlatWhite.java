@@ -2,7 +2,6 @@ package keaunsol2;
 
 public class VanillaFlatWhite extends Espresso{
 
-	public static int price;
 	@Override
 	public void getNutritionalInformation(int size) {
 		
@@ -46,20 +45,18 @@ public class VanillaFlatWhite extends Espresso{
 	}
 	
 	@Override
-	public Integer getPrice() {
+	public Integer getPrice(int size) {
 		
-		if(amount.containsKey("vanillaFlatWhite1")) 
-			price += (5400 * amount.get("vanillaFlatWhite1"));
-		
-		if(amount.containsKey("vanillaFlatWhite2"))
-			price += (5900 * amount.get("vanillaFlatWhite2"));
+		int price = (size == 1) ? 5400 : 5900;
 		
 		return price;
 	}
 	
 	@Override
-	public void setAmount(int choiseSize) {
-
-		amount.put("vanillaFlatWhite" + choiseSize, amount.getOrDefault("vanillaFlatWhite", 0) + 1);
+	public void getSize() {
+		
+		drinkSize.add("Short");
+		drinkSize.add("Tall");
+		
 	}
 }

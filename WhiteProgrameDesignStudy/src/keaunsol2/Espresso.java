@@ -3,18 +3,8 @@ package keaunsol2;
 public class Espresso implements Drink {
 
 	@Override
-	public Integer getSize(int choise) {
-		
-		switch(choise) {
-			
-			case 1 : return Drink.shortSize; 
-			case 2 : return Drink.tallSize; 
-			case 3 : return Drink.grandeSize;
-			case 4 : return Drink.venteSize;
-			
-			default : return null;
-			
-		}
+	public void getSize() {
+
 	}
 
 	@Override
@@ -46,7 +36,7 @@ public class Espresso implements Drink {
 	}
 
 	@Override
-	public Integer getPrice() {
+	public Integer getPrice(int size) {
 		return null;
 	}
 
