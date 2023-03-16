@@ -21,7 +21,6 @@ public class Study_2023_03_09_Level2 extends JFrame implements ActionListener {
 	}
 	
 	Study_2023_03_09_Level2() {
-		
     	JPanel pn = new JPanel();
     	JPanel pbt = new JPanel();
     	JButton[] pBtn = new JButton[2];

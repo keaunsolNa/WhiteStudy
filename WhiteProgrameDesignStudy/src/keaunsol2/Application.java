@@ -32,7 +32,6 @@ public class Application {
 				case 3 : checkBasket(); break;
 				case 4 : break;
 				
-				
 				default : break;
 				
 			}
@@ -47,6 +46,7 @@ public class Application {
 		dynamicClass = Class.forName("keaunsol2." + choiseDrink);
 		dynamicObject = dynamicClass.newInstance();
 
+		Menu.drinkSize.clear();
 		dynamicMethod = dynamicClass.getMethod("getSize");
 		dynamicMethod.invoke(dynamicObject);
 
@@ -180,11 +180,14 @@ public class Application {
 	
 	public static void checkBasket() {
 		
-		System.out.println(Menu.basket);
-		
 		for (String key : Menu.basket.keySet()) {
+
+			int size = Integer.parseInt(key.split(" ")[0]);
+			String cupSize = size == 1 ? "Short Size " : size == 2 
+									   ? "Tall Size " : size == 3 
+									   ? "Grande Size " : "Venti Size ";
 			
-			System.out.println(key + " : " + Menu.basket.get(key));
+			System.out.println(cupSize + key.split(" ")[1] + " : " + Menu.basket.get(key));
 		}
 	}
 }
