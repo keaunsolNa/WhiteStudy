@@ -40,10 +40,4 @@ public class Espresso implements Drink {
 		return null;
 	}
 
-	@Override
-	public void setAmount(int choiseSize) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

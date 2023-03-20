@@ -17,7 +17,5 @@ public interface Menu {
 	public abstract void getAllergyTriggers();
 	public abstract Integer getPrice(int size);
 
-	public abstract void setAmount(int choiseSize);
-	
 	
 }
