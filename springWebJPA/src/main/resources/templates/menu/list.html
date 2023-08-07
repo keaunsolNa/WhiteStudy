@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+<meta charset="UTF-8">		
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<script>
+		const successMessage = "[[${ registSuccessMessage }]]";
+		successMessage && alert(successMessage);
+	</script>
+	
+	<table align="center" border="1">
+		<tr>
+			<th>StudyID</th>
+			<th>NAME</th>
+			<th>DESCRIPTION</th>
+		</tr>
+		<tr th:each="table : ${ tableList }">
+			<td th:text="${ table.studyID }"></td>
+			<td th:text="${ table.name }"></td>
+			<td th:text="${ table.description }"></td>
+		</tr>
+	</table>
+</body>
+</html>

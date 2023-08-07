@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org"><!-- 타임리프 활용하기(네임스키마 문법 추가) -->
+<head>
+<meta charset="UTF-8">	
+<title>Insert title here</title>
+</head>
+<body>
+	<h3 align="center">메뉴 검색</h3>
+	<table align="center" border="1">
+		<tr>
+			<th>시퀀스 번호</th>
+			<th>이름</th>
+			<th>설명</th>
+		</tr>
+		<tr th:each="table : ${ tableList }">
+			<td th:text="${ table.studyID }"></td>
+			<td th:text="${ table.name }"></td>
+			<td th:text="${ table.description }"></td>
+		</tr>
+	</table>
+
+    <div th:replace="menu/paging.html"></div>
+
+	<!-- 검색 폼 -->
+	<div class="search-area" align="center">
+		<form id="loginForm" action="/menu/search" method="get" style="display: inline-block">
+				<select th:with="searchCondition = ${selectCriteria.searchCondition}"
+					id="searchCondition" name="searchCondition">
+					<option value="name" th:selected="${ searchCondition } == 'name'">이름</option>
+					<option value="description" th:selected="${ searchCondition } == 'description'">설명</option>
+				</select> 
+			<input type="hidden" name="currentPage" value="1">
+			<input type="search" id="name" name="searchValue" th:value="${selectCriteria.searchValue}">
+			<button class="btn btn-bs" type="submit">검색하기</button>
+		</form>
+	</div>
+</body>
+</html>

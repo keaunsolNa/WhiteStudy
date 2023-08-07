@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3 align="center">테이블 수정</h3>
+	<form action="/menu/modify" method="post" align="center">
+		<label>SEQUENCE 번호 : </label><input type="number" name="studyID">
+		<br>
+		<label>이름 : </label><input type="text" name="name">
+		<br>
+		<label>설명 : </label><input type="text" name="description">
+		<br>
+		<input type="submit" value="전송">
+	</form>
+</body>
+</html>

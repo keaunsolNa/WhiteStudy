@@ -16,6 +16,5 @@ public interface Menu {
 	public abstract void getNutritionalInformation(int size);
 	public abstract void getAllergyTriggers();
 	public abstract Integer getPrice(int size);
-
 	
 }
