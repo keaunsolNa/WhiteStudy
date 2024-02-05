@@ -14,6 +14,6 @@
 
 [랜카드](Network_Device/LAN_Card.md)
 
-[**Repeater(**리피터)](Network_Device/Repeater.md)
+[리피터](Network_Device/Repeater.md)
 
-[**Hub(**허브)](Network_Device/Hub.md)
+[허브](Network_Device/Hub.md)
