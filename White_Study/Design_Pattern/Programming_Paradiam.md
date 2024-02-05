@@ -6,7 +6,7 @@
 
 [명령형 프로그래밍](Programming_Paradiam/Imperative_Programming.md)
 
-[함수형 프로그래밍 ](Programming_Paradiam/Functional_Programming.md)
+[함수형 프로그래밍](Programming_Paradiam/Functional_Programming.md)
 
 [논리형 프로그래밍](Programming_Paradiam/Logic_Programming.md)
 

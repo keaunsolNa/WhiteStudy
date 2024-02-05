@@ -6,7 +6,7 @@
 
 [JSON/AJAX](Keyword/JSON_AJAX.md)
 
-[Synchronous/***Asynchronous***](Keyword/Synchronous_Asynchronous.md)
+[Synchronous/Asynchronous](Keyword/Synchronous_Asynchronous.md)
 
 [Deadlock](Keyword/Deadlock.md)
 
