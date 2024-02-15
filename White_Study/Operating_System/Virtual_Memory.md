@@ -12,7 +12,7 @@
 
 [Virtual Machine](Virtual_Memory/Virtual_Machine.md)
 
-[O**rchestration**](Virtual_Memory/Orchestration.md)
+[Orchestration](Virtual_Memory/Orchestration.md)
 
 [Cloud Computing](Virtual_Memory/Cloud_Computing.md)
 
