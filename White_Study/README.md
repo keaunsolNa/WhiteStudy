@@ -50,7 +50,7 @@
 
 ### [Chapter 4 - 4 : Network Device](Network/Network_Device.md)
 
-### Chapter 4 - 5 : DNS
+### [Chapter 4 - 5 : DNS](Network/DNS(Domain_Name_System).md)
 
 ### Chapter 4 - 6 : HTTP/HTTPS
 
