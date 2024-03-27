@@ -52,9 +52,9 @@
 
 ### [Chapter 4 - 5 : DNS](Network/DNS(Domain_Name_System).md)
 
-### Chapter 4 - 6 : HTTP/HTTPS
+### [Chapter 4 - 6 : HTTP/HTTPS](Network/HTTP&HTTPS.md)
 
-### Chapter 4 - 7 : TLS
+### Chapter 4 - 7 : SSL/TLS
 
 ### Chapter 4 - 8 : Sockets
 
