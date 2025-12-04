@@ -1,6 +1,6 @@
 # White_Study
 
--- 2023.08 ~ 진행
+-- 2023.08 ~ 2024.04
 
 -- Computer Science 관련 내용 학습 md 파일과 실습 코드가 기록된 Repo.
 
@@ -12,4 +12,3 @@
 
 -- [자바 기반 간단한 학습 코드](https://github.com/keaunsolNa/whiteStudy/tree/master/WhiteProgrameDesignStudy)
 
--- [JPA 기반 실습 프로젝트 기본 코드](https://github.com/keaunsolNa/whiteStudy/tree/master/springWebJPA)
